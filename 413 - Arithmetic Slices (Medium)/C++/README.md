@@ -1,4 +1,4 @@
-# Python Solution for 413 - Arithmetic Slices
+# C++ Solution for 413 - Arithmetic Slices
 
 ## Approach
 
