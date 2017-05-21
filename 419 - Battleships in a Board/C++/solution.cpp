@@ -1,28 +1,18 @@
 class Solution {
 public:
-    int findBottomLeftValue(TreeNode* root) {
-        queue<pair<TreeNode*, int>> q; // A queue of pairs of tree nodes and integers to denote the level of the node.
+    int countBattleships(vector<vector<char>>& board) {
+        int count = 0; // Our ship count.
 
-        int currentBottomLevel = 1;         // The current bottom-most level found.
-        TreeNode* currentBottomLeft = root; // The current bottom-left-most node found.
-
-        q.push(make_pair(root, 1)); // Start with the root in the queue.
-
-        while (!q.empty()) { // Iterate through the queue.
-            TreeNode* currentNode = q.front().first;    // The TreeNode at the front of the queue.
-            int currentLevel = q.front().second;        // The level of that TreeNode.
-
-            q.pop(); // Remove the front element of the queue.
-
-            if (currentBottomLevel < currentLevel) { // If a new lowest level is found
-                currentBottomLevel = currentLevel;   // Set a new lowest level.
-                currentBottomLeft = currentNode;     // Set a new bottom left node.
+        for (int i = 0; i < board.size(); i++) {        // Iterate the rows.
+            for (int j = 0; j < board[i].size(); j++) { // Iterate the columns.
+                // Make sure the current character is an 'X', the character to the
+                // left is not an 'X', and the character above is not an 'X'. This
+                // indicates an uncounted battleship.
+                count += board[i][j] == 'X' && (i == 0 || board[i - 1][j] == '.')
+                            && (j == 0 || board[i][j - 1] == '.');
             }
-
-            if (currentNode->left) q.push(make_pair(currentNode->left, currentLevel + 1));      // Add the left child.
-            if (currentNode->right) q.push(make_pair(currentNode->right, currentLevel + 1));    // Add the right child.
         }
 
-        return currentBottomLeft->val;
+        return count;
     }
 };
