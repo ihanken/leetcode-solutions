@@ -1,4 +1,4 @@
-# Python Solution for 9 - Palindrome Integer
+# Python Solution for 9 - Palindrome Number
 
 ## Approach
 

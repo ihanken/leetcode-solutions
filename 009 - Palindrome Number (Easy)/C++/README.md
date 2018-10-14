@@ -1,4 +1,4 @@
-# C++ Solution for 9 - Palindrome Integer
+# C++ Solution for 9 - Palindrome Number
 
 ## Approach
 
