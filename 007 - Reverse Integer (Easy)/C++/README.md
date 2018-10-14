@@ -1,4 +1,4 @@
-# C++ Solution for 7 - Two Sum
+# C++ Solution for 7 - Reverse Integer
 
 ## Approach
 

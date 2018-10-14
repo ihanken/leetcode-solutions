@@ -1,16 +1,11 @@
-# C++ Solution for 7 - Two Sum
+# C++ Solution for 9 - Palindrome Integer
 
 ## Approach
 
-We will need to first keep track of the sign of the number, reverse the digits, and then multiply by the sign again. At this point, we
-can check if the number is a 32 bit signed integer; if it is, we will return it. If not, we will return 0.
+Since the sign is also reversed, we know that any number less than 0 is not palindromic. Thus, we can just reverse the number and see if the
+number is still the same. See [7 - Reverse Integer](https://github.com/ihanken/leetcode-solutions/tree/master/007%20-%20Reverse%20Integer%20(Easy)/C%2B%2B) for
+an explanation of reversing an integer.
 
 ## Explanation
 
-Hold the negative flag in a boolean.
-
-We start with the new number being 0. We iterate while the absolute value of x is greater than 0, and each time we multiply our new number
-by 10 (to get a 0 in the ones place) and add the old number mod 10 (which gives us the ones digit of the old number). We can then divide
-the old number by 10 to shift the number one place to the right.
-
-Finally, add a negative sign (if needed), and check if the number is 32 bit.
+If the number is negative, immediately return false. Otherwise, reverse the number and return whether the number is equal to the reverse.

@@ -1,4 +1,4 @@
-# Python Solution for 7 - Two Sum
+# Python Solution for 7 - Reverse Integer
 
 ## Approach
 
